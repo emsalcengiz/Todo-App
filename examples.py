@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,redirect,url_for
 app = Flask(__name__)
 
 @app.route('/')
@@ -15,7 +15,8 @@ def sum():
         return render_template("sum.html", total = int(number2) + int(number2))
         
     else:
-        return render_template("sum.html")
+        #return render_template("sum.html")
+        return redirect(url_for("index"))
 
 
 
