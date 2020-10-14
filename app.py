@@ -3,7 +3,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template("index.html", number = 2020,number_two = 2030)
+    message = "mesaj gidecek mi !!"
+    return render_template("index.html", number = 2020,number_two = 2030, message = message)
 
 
 if __name__ == '__main__':
