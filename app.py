@@ -1,16 +1,9 @@
-from flask import Flask
+from flask import Flask,render_template_string
 app = Flask(__name__)
 
 @app.route('/')
-def deneme():
-    return 'deneme..'
-@app.route('/search')
-def search():
-    return "search page"
-@app.route('/delete/<string:id>')
-def deleteId(id):
-    return "ID:" + id
-
+def index():
+    return 'fist page..'
 
 
 if __name__ == '__main__':
