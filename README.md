@@ -1,2 +1,2 @@
 # Todo-App
-Todo app using Flask and SqlAlchemy 
+Todo app using Flask and ORM, SqlAlchemy 
