@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template("index.html", number = 2020,number_two = 2030)
 
 
 if __name__ == '__main__':
