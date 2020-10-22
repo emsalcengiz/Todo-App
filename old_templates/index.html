@@ -1,0 +1,27 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sayfam !!</title>
+</head>
+<body>
+    <h3>Todo App</h3>
+    Sayi1: {{ number }}<br>
+    Sayi2: {{ number_two }}
+    
+    {% if message %}
+        <p> {{ message}}</p>
+    {% else %}
+        <p> noldu şimdi ..</p>
+    {% endif %}
+    <ul>
+    {% for  number in numbers  %}
+        <li> {{ number }}</li>
+    
+    {% endfor %}
+    </ul>
+
+
+        
+</body>
+</html>
+
