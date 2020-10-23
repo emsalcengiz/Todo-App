@@ -29,10 +29,20 @@
       <th scope="col">Todo Başlık</th>
       <th scope="col">Todo İçerik</th>
       <th scope="col">Durum</th>
-      <th scope="col">Güncelle</th>
+      <th scope="col">Tamamla</th>
       <th scope="col">Sil</th>
     </tr>
   </thead>
+    <tbody>
+    {% for todo in todos %}
+      <th scope="row">{{todo.id}}</th>
+      <th >{{todo.title}}</th>
+      <th >{{todo.content}}</th>
+      <th >{{todo.comlete}}</th>
+      <th><a href="/comlete/{{todo.id}}" class="btn btn-danger">Tamamla</a></th>
+      <th><a href="/delete/{{todo.id}}" class="btn btn-danger">Sil</a></th>
+    {% endfor %}
+    </tbody>
 </table>
     
     
