@@ -15,17 +15,18 @@ def addTodo():
     title = request.form.get("title")
     content = request.form.get("content")
 
-    newTodo = Todo(title=title, content=content, comlete= False)
+    newTodo = Todo(title=title, content=content, complete= False)
 
+    db.session.remove(newTodo)
     db.session.add(newTodo)
     db.session.commit()
     return redirect(url_for("index"))
 
-@app.route("/comlete/<int:id>", methods=["GET"])
-def comlete_Todo(id):
+@app.route("/complete/<int:id>", methods=["GET"])
+def complete_Todo(id):
     todo = Todo.query.filter_by(id=id).first()
-    if (todo.comlete == False):
-        todo.comlete = True
+    if (todo.complete == False):
+        todo.complete = True
     else:
         todo.comlete = False
     db.session.commit()
@@ -38,7 +39,7 @@ class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(80))
     content = db.Column(db.Text)
-    comlete = db.Column(db.Boolean)
+    complete = db.Column(db.Boolean)
 
 
    
